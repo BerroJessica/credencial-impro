@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Verificación</title>
+  <title>Verificación de alumno</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; text-align: center; }
+    .activo { color: green; font-weight: bold; }
+    .inactivo { color: red; font-weight: bold; }
+  </style>
 </head>
 <body>
-    <h1>Verificación de identidad</h1>
-    <p>Nombre: {{ alumno.nombre }}</p>
-    <p>Estado: {{ '✅ Activo' if alumno.activo else '❌ Inactivo' }}</p>
-    <p>Válido hasta: {{ alumno.vence }}</p>
+  <h1>{{ alumno.nombre }}</h1>
+  {% if alumno.activo %}
+    <p class="activo">✅ ACTIVO</p>
+  {% else %}
+    <p class="inactivo">❌ INACTIVO</p>
+  {% endif %}
+  <p>Válido hasta: {{ alumno.vence }}</p>
 </body>
 </html>
