@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import json
+import os
 import qrcode
 import base64
 from io import BytesIO
@@ -37,4 +38,5 @@ def verificar(id):
     return render_template("verificador.html", alumno=alumno)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
