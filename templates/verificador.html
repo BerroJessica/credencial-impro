@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificación</title>
+</head>
+<body>
+    <h1>Verificación de identidad</h1>
+    <p>Nombre: {{ alumno.nombre }}</p>
+    <p>Estado: {{ '✅ Activo' if alumno.activo else '❌ Inactivo' }}</p>
+    <p>Válido hasta: {{ alumno.vence }}</p>
+</body>
+</html>
