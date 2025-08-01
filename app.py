@@ -20,7 +20,8 @@ def credencial(id):
         return "Alumno no encontrado", 404
 
     ahora = datetime.utcnow().isoformat()
-    url_verificacion = f"https://tu-app.onrender.com/verificar/{id}?t={ahora}"
+    url_verificacion = f"https://credencial-impro.onrender.com/verificar/{id}"
+
 
     qr = qrcode.make(url_verificacion)
     buffer = BytesIO()
